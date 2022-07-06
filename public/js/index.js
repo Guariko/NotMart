@@ -33,6 +33,14 @@ function adjustHeaderNavBarContent(elementToUse, breakPoint) {
     }
 }
 
+function changeInnetHtml(elementToUse, breakPoint, ifValue, elseValue) {
+    if (window.innerWidth >= breakPoint) {
+        elementToUse.innerHTML = ifValue;
+    } else {
+        elementToUse.innerHTML = elseValue;
+    }
+}
+
 /* FIXME: Functions end */
 
 /* TODO: Header starts */
@@ -104,3 +112,31 @@ window.addEventListener("resize", () => {
 /* FIXME: Header desktop adjustments end */
 
 /* FIXME: Header ends */
+
+/* TODO: Home starts */
+
+const homeH1 = document.querySelector(".home__h1");
+
+homeH1IfValue = "the all-in-one solution for creators to become entrepreneurs";
+homeH1ElseValue =
+    "the all-in-one <br> solution for <br> creators to <br> become <br> entrepreneurs";
+
+changeInnetHtml(homeH1, 500, homeH1IfValue, homeH1ElseValue);
+
+window.addEventListener("resize", () => {
+    changeInnetHtml(homeH1, 500, homeH1IfValue, homeH1ElseValue);
+});
+
+const video = document.querySelector(".home__video__container");
+const videoClicked = document.querySelector(".video__clicked");
+const closeVideo = document.querySelector(".video__clicked .fa-times");
+
+video.addEventListener("click", () => {
+    addClass(videoClicked, classToShowElement);
+});
+
+closeVideo.addEventListener("click", () => {
+    removeClass(videoClicked, classToShowElement);
+});
+
+/* FIXME: Home ends */

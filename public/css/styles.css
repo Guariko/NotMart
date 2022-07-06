@@ -3,7 +3,9 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
+    overflow-y: visible;
 }
+
 
 * {
     box-sizing: border-box;
@@ -33,6 +35,7 @@ ul {
     --text-color: #95979b;
     --header-height: 7rem;
     --logo-name-color: #0e4455;
+    --horizontal-grobal-padding: 5%;
 }
 
 .main {
@@ -88,6 +91,7 @@ ul {
     background: var(--main-color);
     padding: 0 1.5rem 0 1.2rem;
     overflow: visible;
+    z-index: 1000;
 }
 
 .fa-fire {
@@ -198,7 +202,117 @@ ul {
 
 /* FIXME: Header ends */
 
-/* Media queries start */
+/* TODO: Home starts */
+
+.home {
+    background: url(../../public/images/small.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.home__content__container {
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1.5rem;
+    gap: 2rem;
+}
+
+.home__h1 {
+    color: var(--home-header-color);
+    font-size: 2.2rem;
+    text-transform: capitalize;
+}
+
+.home__content__container .button__container {
+    background: var(--third-color);
+    width: 18rem;
+    cursor: pointer;
+}
+
+.home__content__container .button {
+    color: var(--main-color);
+}
+
+.home__video__container {
+    height: 18rem;
+    background: url(../images/videoThumbnail.jpg);
+    background-repeat: no-repeat;
+    background-position: -240px -350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    max-width: 35rem;
+    transition: all .2s linear;
+}
+
+.home__video__container:hover {
+    box-shadow: inset 0 -40px 40px 0 rgba(240, 78, 35, 0.5), inset 10px 0 40px 0 rgba(240, 78, 35, 0.5);
+}
+
+.circle {
+    height: 7rem;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid var(--main-color);
+    background: rgba(0,0,0,0.6);
+    transition: all .2s linear;
+}
+
+.player {
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-left: 26px solid var(--main-color);
+    border-bottom: 13px solid transparent;
+    margin-left: 0.5rem;
+}
+
+.home__video__container:hover .circle {
+    background: var(--third-color);
+}
+
+.video__clicked {
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    bottom: 10%;
+    right: 10%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 2rem;
+    padding: 0.5rem;
+    display: none;
+}
+
+.video__clicked.active {
+    display: flex;
+    align-items: center;
+}
+
+.video__clicked h2 {
+    font-size: 2rem;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    align-self: center;
+}
+
+
+.video__clicked .fa-times {
+    color: white;
+    position: inherit;
+    top: 3rem;
+    right: 3rem;
+    cursor: pointer;
+}
+
+/* TODO: Media queries start */
 
 @media screen and (min-width: 200px) {
 
@@ -223,6 +337,16 @@ ul {
     .logo__name {
         font-size: 3rem;
     }
+
+    /* FIXME: Header adjustments end */
+
+    /* TODO: Home adjustments */
+
+    .home__h1 {
+        font-size: 2.7rem;
+    }
+
+    /* FIXME: Home adjustments end */
     
 }
 
@@ -235,6 +359,30 @@ ul {
     }
 
     /* FIXME: Header adjustments end */
+
+    /* TODO: Home adjustments */
+
+    .home {
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4rem var(--horizontal-grobal-padding);
+    }
+
+    .home__content__container {
+        padding: 0;
+    }
+
+    .home__video__container {
+        height: 20rem;
+    }
+
+    .home__h1 {
+        font-size: 3rem;
+    }
+
+    /* FIXME: Home adjustments end */
     
 }
 
@@ -255,6 +403,14 @@ ul {
     
     /* FIXME: Header adjustments end */
 
+    /* TODO: Home adjsutments */
+
+    .home__video__container {
+        height: 22rem;
+    }
+
+    /* FIXME: Home adjsutments end */
+
 }
 
 @media screen and (min-width: 550px) {
@@ -272,6 +428,40 @@ ul {
     }
     
     /* FIXME: Header adjustments end */
+
+    /* TODO: Home ajdustments */
+
+    .home {
+        background-image: url(../images/medium.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .home__video__container {
+        height: 28rem;
+        background: url(../images/videoThumbnail.jpg);
+        background-position: 0 -200px;
+        background-repeat: no-repeat;
+        background-size: 100% 200%;
+        border-radius: 1rem;
+        max-width: 55rem;
+        margin-top: -2rem;
+        cursor: pointer;
+    }
+
+    .home__video__container:hover {
+        box-shadow: inset 0 -100px 40px 0 rgba(240, 78, 35, 0.5), inset 10px 0 40px 0 rgba(240, 78, 35, 0.5);
+    }
+
+    .home__h1 {
+        max-width: 20ch;
+    }
+
+    .video__clicked h2 {
+        font-size: 4rem;
+    }
+
+    /* FIXME: Home adjustments end */
     
 }
 
@@ -290,6 +480,14 @@ ul {
     }
     
     /* FIXME: Header adjustments end */
+
+    /* TODO: Home adjsutments */
+
+    .home__h1 {
+        font-size: 4rem;
+    }
+
+    /* FIXME: Home adjsutments end */
     
 }
 
@@ -308,7 +506,19 @@ ul {
     }
     
     /* FIXME: Header adjustments end */
-    
+
+    /* TODO: Home ajustments */
+
+    .video__clicked {
+        padding: 0 var(--horizontal-grobal-padding);
+    }
+
+    .video__clicked h2 {
+        font-size: 5rem;
+    }
+
+    /* FIXME: Home adjsutments end */
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -326,10 +536,20 @@ ul {
     }
     
     /* FIXME: Header adjustments end */
+
  
 }
 
 @media screen and (min-width: 1280px) {
+
+
+    /* TODO: Setting up the project adjustments */
+
+    :root {
+        --horizontal-grobal-padding: 7%;
+    }
+
+    /* FIXME: Setting up the project adjustments end */
 
     /* TODO: Header adjsutments */
 
@@ -395,7 +615,17 @@ ul {
     
 }
 
+
+
 @media screen and (min-width: 1400px) {
+
+    /* TODO: Setting up the project adjustments */
+
+    :root {
+        --horizontal-grobal-padding: 10%;
+    }
+
+    /* FIXME: Setting up the project adjustments end */
 
     /* TODO: Header adjsutments */
 
@@ -404,10 +634,19 @@ ul {
     }
 
     /* FIXME: Header adjsutments end */
+
     
 }
 
 @media screen and (min-width: 1500px) {
+
+    /* TODO: Setting up the project adjustments */
+
+    :root {
+        --horizontal-grobal-padding: 12%;
+    }
+
+    /* FIXME: Setting up the project adjustments end */
 
     /* TODO: Header adjsutments */
 
@@ -428,6 +667,18 @@ ul {
     }
 
     /* FIXME: Header adjsutments end */
+    
+}
+
+@media screen and (min-width:1800px) {
+
+    /* TODO: Setting up the project adjustments */
+
+    :root {
+        --horizontal-grobal-padding: 16%;
+    }
+
+    /* FIXME: Setting up the project adjustments end */
     
 }
 
