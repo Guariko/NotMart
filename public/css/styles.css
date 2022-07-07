@@ -38,6 +38,12 @@ ul {
     --horizontal-grobal-padding: 5%;
 }
 
+p {
+    max-width: 40ch;
+    color: var(--other-headers-color);
+    font-size: 2rem;
+}
+
 .main {
     margin-top: var(--header-height);
 }
@@ -312,6 +318,57 @@ ul {
     cursor: pointer;
 }
 
+/* FIXME: Home ends */
+
+/* TODO: Home second part starts */
+
+.home__second {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.2rem;
+}
+
+.home__second__content {
+    padding: 8rem 0;
+}
+
+.home__second__content h2 {
+    font-size: 2.5rem;
+    color: var(--other-headers-color);
+}
+
+.home__second__content p {
+    margin-top: 4rem;
+}
+
+.home__second__square mark {
+    color: black;
+    font-weight: bold;
+}
+
+.home__second__square {
+    background: var(--second-color);
+    padding: 3rem;
+    align-self: center;
+    max-width: 50rem;
+}
+
+.actual__button {
+    font-size: 1.5rem;
+    color: var(--home-header-color);
+    background: var(--third-color);
+    padding: 1.5rem 2rem;
+    display: inline-block;
+    text-transform: capitalize;
+    font-weight: 550;
+    width: fit-content;
+}
+
+.home__second__square .actual__button {
+    margin-top: 3rem;
+}
+
 /* TODO: Media queries start */
 
 @media screen and (min-width: 200px) {
@@ -347,6 +404,16 @@ ul {
     }
 
     /* FIXME: Home adjustments end */
+
+    /* TODO: Home second part adjsutments end */
+
+    p {
+        font-size: 2.6rem;
+    }
+
+    .home__second__square {
+        padding: 5rem 2rem;
+    }
     
 }
 
@@ -444,7 +511,7 @@ ul {
         background-repeat: no-repeat;
         background-size: 100% 200%;
         border-radius: 1rem;
-        max-width: 55rem;
+        max-width: 50rem;
         margin-top: -2rem;
         cursor: pointer;
     }
@@ -491,6 +558,31 @@ ul {
     
 }
 
+@media screen and (min-width:800px) {
+
+    /* TODO: Home second adjustments */
+
+    .home__second {
+        flex-direction: row;
+        gap: 10rem;
+        padding: 6rem var(--horizontal-grobal-padding);
+    }
+
+    .home__second__square {
+        background: var(--second-color);
+        padding: 0 3rem;
+        align-self: center;
+        max-width: 48rem;
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+  
+    /* FIXME: Home second adjsutments end */
+    
+}
+
 @media screen and (min-width: 900px) {
 
     /* TODO: Header adjustments */
@@ -518,6 +610,12 @@ ul {
     }
 
     /* FIXME: Home adjsutments end */
+
+    /* TODO: Home second adjustments */
+
+    .home__second__square {
+        aspect-ratio: 1/0.8;
+    }
 
 }
 
@@ -612,10 +710,29 @@ ul {
     }
 
     /* FIXME: Header adjsutments end */
+
+    /* TODO: Home adjustments */
+
+    .home__video__container {
+        max-width: 45rem;
+    }
+
+    /* FIXME: Home adjustments end */
+
+    /* TODO: Home second adjsutments */
+
+    .home__second {
+        overflow: visible;
+    }
+
+    .home__second__square {
+        position: relative;
+        top: -25rem;
+        z-index: 100;
+        max-width: 60rem;
+    }
     
 }
-
-
 
 @media screen and (min-width: 1400px) {
 

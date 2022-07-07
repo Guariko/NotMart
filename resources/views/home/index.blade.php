@@ -10,4 +10,6 @@
 
 <!-- FIXME: Home ends -->
 
+@include("home.home_second")
+
 @endsection
